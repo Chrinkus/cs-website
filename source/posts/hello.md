@@ -1,4 +1,3 @@
----
 title: Hello World
 author: Chris Schick
 date: May 8, 2017
