@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function loadFile(path, enc) {
+function loadFile(path, enc = "utf8") {
 
     return new Promise((resolve, reject) => {
 
@@ -9,7 +9,7 @@ function loadFile(path, enc) {
             if (err) {
                 reject(err);
             } else {
-                resolve(data)
+                resolve(data);
             }
         });
     });
