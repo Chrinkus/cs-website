@@ -33,16 +33,25 @@ function makePost(file) {
     return post;
 }
 
-function getPosts(path) {
+async function getPosts(path) {
     const posts = getFiles(path)
         .then(files => {
             return files.map(file => makePost(file));
         });
 
-    return posts;
+    return await posts;
 }
 
-module.exports = getPosts;
+console.log(getPosts("./posts"));
+
+/* TEST
+const path = "./posts";
+
+const blogPosts = getFiles(path)
+    .then(files => {
+        console.log(files.map(file => makePost(file)));
+    });
+*/
 
 /* OUTPUT = Array of posts with format:
  * 

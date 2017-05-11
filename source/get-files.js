@@ -1,3 +1,11 @@
+/* get-files module
+ *
+ * returns a Promise which will deliver all files in a given directory, served
+ * as strings.
+ *
+ * Was written for cs-website project but has been sufficiently abstracted to 
+ * work anytime all files from a directory must be retrieved.
+ */
 const fs        = require("fs");
 
 function loadFile(path, enc = "utf8") {
