@@ -12,14 +12,12 @@ function parseFileStringToArr(fileStr) {
 
 function getHeader(headerArr) {
     "use strict";
-    const headerObj = {};
 
-    headerArr.forEach(line => {
+    return headerArr.reduce((header, line) => {
         const [prop, value] = line.split(": ");
-        headerObj[prop] = value;
-    });
-
-    return headerObj;
+        header[prop] = value;
+        return header;
+    }, {});
 }
 
 function makePost(file) {
@@ -33,6 +31,9 @@ function makePost(file) {
     return post;
 }
 
+module.exports = makePost;
+
+/*
 async function getPosts(path) {
     const posts = getFiles(path)
         .then(files => {
@@ -43,15 +44,15 @@ async function getPosts(path) {
 }
 
 console.log(getPosts("./posts"));
+*/
 
-/* TEST
+// TEST
 const path = "./posts";
 
 const blogPosts = getFiles(path)
     .then(files => {
         console.log(files.map(file => makePost(file)));
     });
-*/
 
 /* OUTPUT = Array of posts with format:
  * 
