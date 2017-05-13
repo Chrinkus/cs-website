@@ -7,19 +7,7 @@
  * work anytime all files from a directory must be retrieved.
  */
 const fs        = require("fs");
-
-function loadFile(path, enc = "utf8") {
-
-    return new Promise((resolve, reject) => {
-        fs.readFile(path, enc, (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(data);
-            }
-        });
-    });
-}
+const loadFile  = require("load-file");
 
 function getFileNames(directory) {
     "use strict";
