@@ -1,7 +1,6 @@
 const fs = require("fs");
 
 function loadFile(path, enc = "utf8") {
-    "use strict";
 
     return new Promise((resolve, reject) => {
         fs.readFile(path, enc, (err, data) => {

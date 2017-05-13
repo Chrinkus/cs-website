@@ -8,7 +8,9 @@ function writeFile(file, data) {
             if (err)
                 reject(err);
             else
-                resolve(`${file} written`);
+                resolve(console.log(`${file} written`));
         });
     });
 }
+
+module.exports = writeFile;
