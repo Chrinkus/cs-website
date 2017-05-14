@@ -1,12 +1,7 @@
-const getPosts      = require("./get-posts");
 const loadFile      = require("./load-file");
+const getPosts      = require("./get-posts");
+const parsePost     = require("./parse-post");
 const writeFile     = require("./write-file");
-
-function createNode(tag, content) {
-    "use strict";
-
-    return `<${tag}>${content}</${tag}>\n`;
-}
 
 function writePostHTML() {
     "use strict";
@@ -20,7 +15,8 @@ function writePostHTML() {
         const [html, posts] = files;
 
         posts.forEach(post => {
-            parsePostToHTML(html, post);
+            writeFile(`../../site/static-pages/${post.head.title}.html`,
+                      parsePost(html, post));
         });
 
     }).catch(err => {
@@ -28,35 +24,4 @@ function writePostHTML() {
     });
 }
 
-//writePostHTML();
-
-function parsePostToHTML(template, post) {
-    "use strict";
-
-    const { head, body } = post;
-
-    const title = createNode("title", `Blog Chrinkus | ${head.title}`),
-          header = createNode("header",
-                       createNode("h1", head.title) +
-                       createNode("p", head.author) +
-                       createNode("date", head.date));
-          //post = sectionPost(body);
-    console.log(title);
-}
-
-function sectionPost(content) {
-    "use strict";
-    return content.reduce((htmlStr, section) => {
-        if (charAt(0) === "#")
-            htmlStr += makeTitle(section);
-        else
-            htmlStr += createNode("p", section);
-    }, "");
-}
-
-function makeTitle(titleSection) {
-    "use strict";
-    const [, hLevel, title] = /^(#+)\s(.*)/.exec(titleSection);
-
-    return createNode(`h${hLevel.length}`, title);
-}
+writePostHTML();
