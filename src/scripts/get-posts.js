@@ -1,3 +1,15 @@
+/* Get Blog Posts
+ *
+ * Promises to return all blog posts from provided directory
+ *
+ * Usage:
+ *
+ * getFiles("../posts")
+ * .then(posts => {
+ *     // Do something with posts
+ * });
+ */
+
 const getFiles = require("./get-files");
 
 function parseFileStringToArr(fileStr) {
@@ -31,43 +43,12 @@ function makePost(file) {
     return post;
 }
 
-module.exports = makePost;
-
-/*
-async function getPosts(path) {
-    const posts = getFiles(path)
+function getPosts(path) {
+    "use strict";
+    return getFiles(path)
         .then(files => {
             return files.map(file => makePost(file));
         });
-
-    return await posts;
 }
 
-console.log(getPosts("./posts"));
-*/
-
-// TEST
-const path = "./posts";
-
-const blogPosts = getFiles(path)
-    .then(files => {
-        console.log(files.map(file => makePost(file)));
-    });
-
-/* OUTPUT = Array of posts with format:
- * 
- * post = {
- *   preamble: {
- *     title: title,
- *     author: author,
- *     date: date,
- *     img-url: url
- *   }, 
- *   content: [
- *      "# Title",
- *      "Lorem ipsum..",
- *      "## Subtitle",
- *      "Morem ipsum.."
- *   ]
- * }
- */
+module.exports = getPosts;

@@ -8,7 +8,7 @@ function writeFile(file, data) {
             if (err)
                 reject(err);
             else
-                resolve(console.log(`${file} written`));
+                console.log(`${file} written`);
         });
     });
 }

@@ -7,7 +7,7 @@
  * work anytime all files from a directory must be retrieved.
  */
 const fs        = require("fs");
-const loadFile  = require("load-file");
+const loadFile  = require("./load-file");
 
 function getFileNames(directory) {
     "use strict";
