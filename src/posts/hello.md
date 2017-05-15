@@ -15,3 +15,7 @@ Second verse, mostly more drivel. The idea is to put these text sections into a 
 ## Don't forget!
 
 I'll also need a replacer to substitute such html unfriendly characters as & and <>'s.
+
+### Looking Back
+
+Finally got this parsed and html-ed. Now looking into getting the images to display nicely.
