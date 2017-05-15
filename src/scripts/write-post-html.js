@@ -1,14 +1,14 @@
-const loadFile      = require("./load-file");
+const readFile      = require("./node-wrappers/read-file");
+const writeFile     = require("./node-wrappers/write-file");
 const getPosts      = require("./get-posts");
 const parsePost     = require("./parse-post");
-const writeFile     = require("./write-file");
 
 function writePostHTML() {
     "use strict";
 
     Promise.all([
 
-        loadFile("../templates/post.html"),
+        readFile("../templates/post.html"),
         getPosts("../posts")
 
     ]).then(files => {

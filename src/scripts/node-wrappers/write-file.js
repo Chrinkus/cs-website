@@ -1,3 +1,8 @@
+/* Write File
+ *
+ * This function is a promise wrapper for the node.js fs.writeFile function.
+ */
+
 const fs = require("fs");
 
 function writeFile(file, data) {

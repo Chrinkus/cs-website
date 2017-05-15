@@ -1,8 +1,17 @@
 /* Parse Post
  *
- * Takes an html template and a post object. Parses post object content into
- * html and inserts it into template. Also accesses post head content and fills
- * in as needed.
+ * parsePost takes an html template and post object. The head and body are
+ * destructured out of the post object, nodes are created with content to be
+ * swapped into the template.
+ *
+ * sectionPost takes the post body array and inserts its entries into
+ * appropriate tags. makeTitle is used to parse "#" style headers into
+ * equivalent heading tags.
+ *
+ * TODO
+ * - change out `Blog Chrinkus` for config reference
+ * - add appropriate attribute to <date>
+ * - expand markdown pattern recognition to bold, italics & code
  */
 
 function parsePost(template, post) {

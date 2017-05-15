@@ -1,6 +1,11 @@
+/* Read File
+ *
+ * This function is a promise wrapper for the node.js fs.readFile function.
+ */
+
 const fs = require("fs");
 
-function loadFile(path) {
+function readFile(path) {
     "use strict";
 
     return new Promise((resolve, reject) => {
@@ -15,4 +20,4 @@ function loadFile(path) {
     });
 }
 
-module.exports = loadFile;
+module.exports = readFile;
