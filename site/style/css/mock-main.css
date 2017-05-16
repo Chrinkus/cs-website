@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
+    font-size: 18px;
 }
 
 body {
@@ -30,6 +31,10 @@ header {
 
 header h1 {
     font-size: 3.5em;
+}
+
+header h2 {
+    font-size: 1.5em;
 }
 
 nav ul {
@@ -60,16 +65,24 @@ a:active {
     color: Indigo;
 }
 
-section {
+article {
     display: flex;
     margin: 2.5%;
 }
 
-article {
-    margin: 1.5% 2.5%;
+section {
+    margin: 1% 2.5%;
+    position: relative;
 }
 
-article h1, p {
+section footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+article h1 {
+    font-size: 2em;
     margin-bottom: 2.5%;
 }
 
@@ -78,4 +91,5 @@ footer.main {
     color: Snow;
     height: 100px;
     margin: 0 4px;
+    padding: 2%;
 }
