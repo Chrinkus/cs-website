@@ -13,7 +13,7 @@ body {
     color: DimGray;
 }
 
-img {
+article img {
     width: 250px;
     height: auto;
 }
@@ -70,7 +70,7 @@ article {
     margin: 2.5%;
 }
 
-section {
+article section {
     margin: 1% 2.5%;
     position: relative;
 }
@@ -91,5 +91,14 @@ footer.main {
     color: Snow;
     height: 100px;
     margin: 0 4px;
-    padding: 2%;
+    padding: 1%;
+}
+
+footer.main img {
+    height:32px;
+    width: auto;
+}
+
+footer.main p {
+    text-align: center;
 }
