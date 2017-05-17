@@ -26,7 +26,6 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0 4px;
 }
 
 header h1 {
@@ -41,19 +40,20 @@ nav ul {
     list-style-type: none;
     display: flex;
 }
+
+nav a {
+    flex-grow: 1;
+}
+
 nav li {
     font-size: 1.5em;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-left: 2px solid DimGray;
-    border-bottom: 2px solid DimGray;
-    border-right: 2px solid DimGray;
+    border: 2px solid DimGray;
     display: flex;
-    flex-grow: 1;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 4px;
 }
 
 a:link, a:visited {
@@ -62,7 +62,8 @@ a:link, a:visited {
 }
 
 a:active {
-    color: Indigo;
+    color: Snow;
+    background-color: DimGray;
 }
 
 article {
@@ -82,7 +83,7 @@ section footer {
 }
 
 article h1 {
-    font-size: 2em;
+    font-size: 1.75em;
     margin-bottom: 2.5%;
 }
 
@@ -90,7 +91,6 @@ footer.main {
     background-color: DimGray;
     color: Snow;
     height: 100px;
-    margin: 0 4px;
     padding: 1%;
 }
 
