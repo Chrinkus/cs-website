@@ -1,4 +1,10 @@
 {
     "title": "Chrinkus",
-    "author": "Chris Schick"
+    "author": "Chris Schick",
+
+    "social": {
+        "github": "https://github.com/Chrinkus",
+        "twitter": "https://twitter.com/chrinkus",
+        "facebook": "url"
+    }
 }
