@@ -1,7 +1,8 @@
 title: Promise to Return
 author: Chris Schick
 date: May 10, 2017
-img-url: couple.jpg
+img: couple.jpg
+teaser: Our intrepid learner tackles asnychronus programming as he strides into the den of the Promise!
 ---
 
 # Promising into the Wind

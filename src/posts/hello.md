@@ -1,7 +1,8 @@
 title: Hello World
 author: Chris Schick
 date: May 8, 2017
-img-url: earth.jpg
+img: earth.jpg
+teaser: There is honestly nothing of value to read in this first, filler post.
 ---
 
 # Hello!
