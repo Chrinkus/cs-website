@@ -2,6 +2,7 @@ title: Promise to Return
 author: Chris Schick
 date: May 10, 2017
 img: couple.jpg
+alt: A romantic sunset
 teaser: Our intrepid learner tackles asnychronus programming as he strides into the den of the Promise!
 ---
 

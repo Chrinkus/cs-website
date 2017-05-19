@@ -1,10 +1,16 @@
 {
-    "title": "Chrinkus",
+    "title": "The Legend of Chrinkus",
+    "sub-title": "Adventures in Web Development",
     "author": "Chris Schick",
+
+    "paths": {
+        "posts": "",
+        "pages": ""
+    },
 
     "social": {
         "github": "https://github.com/Chrinkus",
         "twitter": "https://twitter.com/chrinkus",
-        "facebook": "url"
+        "facebook": ""
     }
 }

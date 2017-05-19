@@ -2,6 +2,7 @@ title: Hello World
 author: Chris Schick
 date: May 8, 2017
 img: earth.jpg
+alt: A picture of the Earth from space
 teaser: There is honestly nothing of value to read in this first, filler post.
 ---
 

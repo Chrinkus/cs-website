@@ -9,17 +9,16 @@
  * equivalent heading tags.
  *
  * TODO
- * - change out `Blog Chrinkus` for config reference
  * - add appropriate attribute to <date>
  * - expand markdown pattern recognition to bold, italics & code
  */
 
-function parsePost(template, post) {
+function composePost(config, template, post) {
     "use strict";
 
     const { head, body } = post;
 
-    const title = createNode("title", `Blog Chrinkus | ${head.title}`),
+    const title = createNode("title", `${config.title} | ${head.title}`),
           header = createNode("header",
                        createNode("h1", head.title) +
                        createNode("date", `${head.author}, ${head.date}`));
