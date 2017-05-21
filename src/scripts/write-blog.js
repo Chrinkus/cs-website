@@ -1,8 +1,8 @@
 const readFile      = require("./node-wrappers/read-file");
-//const writeFile     = require("./node-wrappers/write-file");
+const writeFile     = require("./node-wrappers/write-file");
 const getPosts      = require("./get-posts");
-//const composePost   = require("./compose-post");
-//const composeMain   = require("./compose-main");
+const composePost   = require("./compose-post");
+const composeMain   = require("./compose-main");
 
 function writeBlog() {
     "use strict";
@@ -17,13 +17,34 @@ function writeBlog() {
     ]).then(files => {
         const [mainHTML, postHTML, config, posts] = files;
 
-        writeMainHTML(config, mainHTML, posts.map(post => post.head));
+        const sortedPosts = posts
+            .sort((a, b) => Date.parse(a.head.date) - Date.parse(b.head.date))
+            .reverse();
+
+        const newestFive = sortedPosts
+            .slice(0, 5)
+            .map(post => post.head);
 
         writePostHTML(config, postHTML, posts);
+
+        writeMainHTML(config, mainHTML, newestFive);
 
     }).catch(err => {
         console.error(err);
     });
 }
 
-writeBlog();
+function writePostHTML(config, HTMLTemp, posts) {
+    "use strict";
+    
+    posts.forEach(post => {
+        writeFile(`../../site/static-pages/${post.head.title}.html`,
+                  composePost(config, HTMLTemp, post));
+    });
+}
+
+function writeMainHTML(config, HTMLTemp, postHeads) {
+    "use strict";
+
+    writeFile();
+}
