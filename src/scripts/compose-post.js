@@ -1,38 +1,19 @@
-/* Parse Post
- *
- * parsePost takes an html template and post object. The head and body are
- * destructured out of the post object, nodes are created with content to be
- * swapped into the template.
- *
- * sectionPost takes the post body array and inserts its entries into
- * appropriate tags. makeTitle is used to parse "#" style headers into
- * equivalent heading tags.
- *
- * TODO
- * - add appropriate attribute to <date>
- * - expand markdown pattern recognition to bold, italics & code
- */
+const { createNode } = require("./create-elements");
 
 function composePost(config, template, post) {
     "use strict";
 
     const { head, body } = post;
 
-    const title = createNode("title", `${config.title} | ${head.title}`),
-          header = createNode("header",
-                       createNode("h1", head.title) +
-                       createNode("date", `${head.author}, ${head.date}`));
-          post = sectionPost(body);
+    const title     = createNode("title", `${config.title} | ${head.title}`),
+          header    = createNode("header",
+                          createNode("h1", head.title) +
+                          createNode("time", `${head.author}, ${head.date}`));
+          post      = sectionPost(body);
 
     return template.replace("<!-- title -->", title)
                    .replace("<!-- header -->", header)
                    .replace("<!-- post -->", post);
-}
-
-function createNode(tag, content) {
-    "use strict";
-
-    return `<${tag}>${content}</${tag}>`;
 }
 
 function sectionPost(content) {
@@ -55,4 +36,4 @@ function makeTitle(titleSection) {
     return createNode(`h${hLevel.length}`, titleText);
 }
 
-module.exports = parsePost;
+module.exports = composePost;

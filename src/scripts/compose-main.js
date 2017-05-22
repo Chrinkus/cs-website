@@ -1,26 +1,28 @@
-const createNode    = require("./createNode");
+const { createNode, makeImageEle, makeTimeEle } = require("./create-elements");
 
-function composeMain(template, topFive, config) {
+function composeMain(config, template, topFive) {
     "use strict";
-    const title = createNode("title", config.title),
+    const title     = createNode("title", config.title),
 
-          hgroup = createNode("hgroup",
-                       createNode("h1", config.title) +
-                       createNode("h2", config.subtitle)),
+          hgroup    = createNode("hgroup",
+                          createNode("h1", config.title) +
+                          createNode("h2", config.subtitle)),
 
-          previews = topFive.reduce((previewStr, postHead) => {
-                  return previewStr += getArticlePreview(postHead);
-              }, "");
+          previews  = topFive.reduce((previewStr, postHead) => {
+                          return previewStr += getArticlePreview(postHead);
+                      }, ""),
+
+          main      = createNode("main", previews);
 
     return template.replace("<!-- title -->", title)
                    .replace("<!-- hgroup -->", hgroup)
-                   .replace("<!-- previews -->", previews);
+                   .replace("<!-- main -->", main);
 
 }
 
 function getArticlePreview(postHead) {
     "use strict";
-    const img = makeImageEle(postHead.img, postHead.alt),
+    const img  = makeImageEle(postHead.img, postHead.alt),
 
           text = createNode("section",
                      createNode("h1", postHead.title) +
@@ -31,14 +33,4 @@ function getArticlePreview(postHead) {
     return createNode("article", img + text);
 }
 
-function makeImageEle(src, alt) {
-    "use strict";
-
-    return `<img src=${src} alt=${alt}/>`;
-}
-
-function makeTimeEle(dateString) {
-    "use strict";
-
-    return `<time datetime=${dateString}>${dateString}</time>`;
-}
+module.exports = composeMain;
