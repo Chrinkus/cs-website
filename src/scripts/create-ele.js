@@ -6,16 +6,22 @@ function createNode(tag, content) {
     return `<${tag}>${content}</${tag}>`;
 }
 
-function makeImageEle(src, alt) {
+function makeLink(href, content) {
+    "use strict";
+
+    return `<a href="${href}">${content}</a>`;
+}
+
+function makeImage(src, alt) {
     "use strict";
 
     return `<img src="../style/img/${src}" alt="${alt}"/>`;
 }
 
-function makeTimeEle(dateString) {
+function makeTime(dateString) {
     "use strict";
 
     return `<time datetime=${dateString}>${dateString}</time>`;
 }
 
-module.exports = { createNode, makeImageEle, makeTimeEle };
+module.exports = { createNode, makeLink, makeImage, makeTime };

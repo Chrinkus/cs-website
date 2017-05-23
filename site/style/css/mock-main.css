@@ -28,11 +28,11 @@ header {
     padding: 2%;
 }
 
-#social {
+header section {
     align-self: flex-end;
 }
 
-#social img {
+header section img {
     width: 32px;
     height: auto;
 }

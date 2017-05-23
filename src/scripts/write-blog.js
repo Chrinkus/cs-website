@@ -27,9 +27,14 @@ const composeMain   = require("./compose-main");
             .slice(0, 5)
             .map(post => post.head);
 
+        function makeFileName(spacedTitle) {
+            return spacedTitle.replace(/ /g, "-");
+        }
+
         // Write individual post pages
         posts.forEach(post => {
-            writeFile(`${config.paths.pages}/${post.head.title}.html`,
+            post.head.file = makeFileName(post.head.title);
+            writeFile(`${config.paths.pages}/${post.head.file}.html`,
                       composePost(config, postHTML, post));
         });
 

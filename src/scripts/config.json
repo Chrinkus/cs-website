@@ -1,11 +1,13 @@
 {
     "title": "The Legend of Chrinkus",
-    "subtitle": "Adventures in Web Development",
+    "subtitle": "Register of a JS Game Dev",
     "author": "Chris Schick",
 
     "paths": {
         "posts": "../posts",
-        "pages": "../../site/static-pages"
+        "pages": "../../site/static-pages",
+
+        "img": "../style/img"
     },
 
     "social": {

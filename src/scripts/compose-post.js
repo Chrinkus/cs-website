@@ -1,4 +1,4 @@
-const { createNode } = require("./create-elements");
+const { createNode } = require("./create-ele");
 
 function composePost(config, template, post) {
     "use strict";

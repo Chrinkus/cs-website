@@ -1,4 +1,4 @@
-const { createNode, makeImageEle, makeTimeEle } = require("./create-elements");
+const { createNode, makeImage, makeTime, makeLink } = require("./create-ele");
 
 function composeMain(config, template, topFive) {
     "use strict";
@@ -22,13 +22,14 @@ function composeMain(config, template, topFive) {
 
 function getArticlePreview(postHead) {
     "use strict";
-    const img  = makeImageEle(postHead.img, postHead.alt),
+    const img  = makeImage(postHead.img, postHead.alt),
 
           text = createNode("section",
-                     createNode("h1", postHead.title) +
+                     makeLink(`./${postHead.file}.html`,
+                         createNode("h1", postHead.title)) +
                      createNode("p", postHead.teaser) +
                      createNode("footer", "<hr>" +
-                         createNode("p", makeTimeEle(postHead.date))));
+                         createNode("p", makeTime(postHead.date))));
 
     return createNode("article", img + text);
 }
