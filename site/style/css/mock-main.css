@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 body {
@@ -78,6 +78,18 @@ nav a:active li {
 article {
     display: flex;
     margin: 2.5%;
+}
+
+article a:link {
+    color: DimGray;
+}
+
+article a:visited {
+    color: Indigo;
+}
+
+article a:active {
+    color: Indigo;
 }
 
 article section {

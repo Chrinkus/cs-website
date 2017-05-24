@@ -1,4 +1,4 @@
-const { createNode } = require("./create-ele");
+const { createNode, makeImage } = require("./create-ele");
 
 function composePost(config, template, post) {
     "use strict";
@@ -6,14 +6,16 @@ function composePost(config, template, post) {
     const { head, body } = post;
 
     const title     = createNode("title", `${config.title} | ${head.title}`),
-          header    = createNode("header",
+          postImg   = makeImage(head.img, head.alt),
+          hgroup    = createNode("hgroup",
                           createNode("h1", head.title) +
-                          createNode("time", `${head.author}, ${head.date}`));
-          post      = sectionPost(body);
+                          createNode("time", `${head.author}, ${head.date}`)),
+          section   = createNode("section", sectionPost(body));
 
     return template.replace("<!-- title -->", title)
-                   .replace("<!-- header -->", header)
-                   .replace("<!-- post -->", post);
+                   .replace("<!-- postImg -->", postImg)
+                   .replace("<!-- hgroup -->", hgroup)
+                   .replace("<!-- section -->", section);
 }
 
 function sectionPost(content) {

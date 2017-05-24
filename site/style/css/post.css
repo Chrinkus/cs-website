@@ -1,9 +1,13 @@
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
+    font-size: 16px;
 }
 
 body {
-    width: 800px;
+    width: 940px;
     margin: 0 auto;
     background-color: Snow;
     color: DimGray;
@@ -14,33 +18,81 @@ nav ul {
     list-style-type: none;
 }
 
-nav li {
+nav a {
     flex-grow: 1;
-    min-height: 40px;
-    text-decoration: none;
+}
+
+nav li {
+    font-size: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid DimGray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    border-bottom: 1px solid DimGray;
-    border-left: 1px solid DimGray;
-    border-right: 1px solid DimGray;
+}
+
+nav a:link, a:visited li {
+    color: DimGray;
+    text-decoration: none;
+}
+
+nav a:active li {
+    color: Snow;
+    background-color: DimGray;
 }
 
 header {
     background-color: Indigo;
     color: Snow;
-    font-size: 1.5em;
     text-align: center;
-    min-height: 200px;
-    padding-top: 24px;
+    height: 250px;
 }
 
 header h1 {
+    font-size: 3.5em;
+}
+
+header h2 {
+    font-size: 1.5em;
 }
 
 header date, p {
     display: inline;
 }
 
-article {
-    width: 80%;
-    margin: 0 auto;
+article header {
+    display: flex;
+}
+
+article header img {
+    width: 250px;
+    height: auto;
+}
+
+article section {
+    width: 62%;
+    text-align: justify;
+}
+
+footer {
+    background-color: DimGray;
+    color: Snow;
+    height: 100px;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer a:link, a:visited {
+    color: Snow;
+    text-decoration: none;
+}
+
+#copy {
+    font-size: 0.75em;
 }
