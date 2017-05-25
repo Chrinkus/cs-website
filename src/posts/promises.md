@@ -2,11 +2,11 @@ title: Promise to Return
 author: Chris Schick
 date: May 10, 2017
 img: couple.jpg
+textColor: Snow
+bgColor: rgb(41, 22, 10)
 alt: A romantic sunset
 teaser: Our intrepid learner tackles asnychronus programming as he strides into the den of the Promise!
 ---
-
-# Promising into the Wind
 
 Wow. So I decided to get clever with my blog parsing program and eschewed the traditional callback tree for shiny, new ECMAScript Promises. Because they're better. Or easier. Or, at least at the moment, niche. Either way, I did, and though they may be, they weren't, and definitely were. So how did it go?
 

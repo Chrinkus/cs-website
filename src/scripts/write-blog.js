@@ -11,11 +11,12 @@ const composeMain   = require("./compose-main");
 
         readFile("../templates/temp-main.html"),
         readFile("../templates/temp-post.html"),
+        readFile("../templates/aside.html"),
         readFile("./config.json").then(file => JSON.parse(file)),
         getPosts("../posts")
 
     ]).then(files => {
-        const [mainHTML, postHTML, config, posts] = files;
+        const [mainHTML, postHTML, aside, config, posts] = files;
 
         // Will need this for Archives
         const sortedPosts = posts
@@ -35,7 +36,8 @@ const composeMain   = require("./compose-main");
         posts.forEach(post => {
             post.head.file = makeFileName(post.head.title);
             writeFile(`${config.paths.pages}/${post.head.file}.html`,
-                      composePost(config, postHTML, post));
+                      composePost(config, postHTML, post)
+                      .replace("<!-- aside -->", aside));
         });
 
         // Write main blog page

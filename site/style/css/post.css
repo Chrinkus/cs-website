@@ -13,101 +13,73 @@ body {
     color: DimGray;
 }
 
-nav ul {
+main {
     display: flex;
-    list-style-type: none;
 }
 
-nav a {
-    flex-grow: 1;
+aside {
+    width: 20%;
+    margin: 8px 0;
 }
 
-nav li {
-    font-size: 1.5em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 2px solid DimGray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-nav a:link, a:visited li {
-    color: DimGray;
-    text-decoration: none;
-}
-
-nav a:active li {
-    color: Snow;
-    background-color: DimGray;
+article {
+    width: 80%;
+    margin: 8px 0 8px 8px;
 }
 
 header {
-    background-color: Indigo;
-    color: Snow;
-    height: 200px;
+    height: 250px;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
 
-hgroup {
-    padding: 2%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-hgroup h1 {
-    font-size: 3.5em;
-}
-
-hgroup h2 {
-    font-size: 1.5em;
-}
-
-header date, p {
-    display: inline;
-}
-
-article header {
-    display: flex;
-}
-
-article header img {
-    height: 200px;
+header img {
+    height: 250px;
     width: auto;
 }
 
-article section {
+header hgroup {
+    flex-grow: 1;
+    margin-right: 8px;
+    padding: 2%;
+
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-section article {
-    width: 75%;
-    text-align: justify;
-    padding: 2%;
+hgroup h1 {
+    font-size: 2.5em;
+}
+
+article section {
+    margin-top: 8px;
+    padding: 1%;
 }
 
 article section h1 {
     font-size: 1.75em;
-    margin-bottom: 2%;
 }
 
 article section h2 {
-    font-size: 1.50em;
-    margin: 2% 0;
+    font-size: 1.5em;
+    margin-bottom: 1%;
 }
 
-section aside {
-    width: 25%;
-    padding: 2%;
+article section h3 {
+    font-size: 1.25em;
+}
+
+article section p {
+    text-align: justify;
+    margin-bottom: 1.25em;
 }
 
 footer {
     background-color: DimGray;
     color: Snow;
+    width: 100%;
     height: 100px;
     padding: 1%;
     display: flex;
@@ -115,11 +87,16 @@ footer {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 footer a:link, a:visited {
     color: Snow;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 #copy {

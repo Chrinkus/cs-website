@@ -2,6 +2,8 @@ title: Hello World
 author: Chris Schick
 date: May 8, 2017
 img: earth.jpg
+textColor: Snow
+bgColor: rgb(28, 65, 176)
 alt: A picture of the Earth from space
 teaser: There is honestly nothing of value to read in this first, filler post.
 ---

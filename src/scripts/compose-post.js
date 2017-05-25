@@ -7,18 +7,13 @@ function composePost(config, template, post) {
 
     const title     = createNode("title", `${config.title} | ${head.title}`),
           postImg   = makeImage(head.img, head.alt),
-          hgroup    = createNode("hgroup",
-                          createNode("h1", head.title)), 
-          aside     = createNode("aside",
-                          createNode("h2", head.author) +
-                          createNode("p", makeTime(head.date))),
-          article   = createNode("article", sectionPost(body));
+          hgroup    = makeHgroup(head),
+          section   = createNode("section", sectionPost(body));
 
     return template.replace("<!-- title -->", title)
                    .replace("<!-- postImg -->", postImg)
                    .replace("<!-- hgroup -->", hgroup)
-                   .replace("<!-- aside -->", aside)
-                   .replace("<!-- article -->", article);
+                   .replace("<!-- section -->", section);
 }
 
 function sectionPost(content) {
@@ -39,6 +34,16 @@ function makeTitle(titleSection) {
     const [, hLevel, titleText] = /^(#+)\s(.*)/.exec(titleSection);
 
     return createNode(`h${hLevel.length}`, titleText);
+}
+
+function makeHgroup(head) {
+    "use strict";
+    const { title, date, textColor, bgColor } = head;
+
+    return `<hgroup style="color:${textColor};background:${bgColor};">` +
+               createNode("h1", title) +
+               createNode("p", makeTime(date)) +
+               "</hgroup>";
 }
 
 module.exports = composePost;
