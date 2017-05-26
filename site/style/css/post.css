@@ -25,6 +25,7 @@ aside {
 article {
     width: 80%;
     margin: 8px 0 8px 8px;
+    align-self: flex-end;
 }
 
 header {

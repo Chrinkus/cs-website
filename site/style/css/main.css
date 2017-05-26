@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    width:  940px;
+    margin: 0 auto;
+    color: DimGray;
+    background-color: Snow;
+}
+
+header {
+    color: Snow;
+    background-color: Indigo;
+    height: 200px;
+    margin: 8px 0;
+    padding: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+hgroup h1 { font-size: 2.5em; }
+hgroup h2 { font-size: 1.5em; }
+
+main {
+    display: flex;
+}
+
+#previews {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#previews article {
+    height: 250px;
+    margin-bottom: 8px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#previews article * {
+    margin-right: 8px;
+}
+
+article img {
+    width: 250px;
+    height: auto;
+}
+
+article h1 { font-size: 1.5em }
+
+article a:link {
+    color: DimGray;
+}
+
+article a:visited {
+    color: Indigo;
+}
+
+article a:active {
+    color: Indigo;
+}
+
+article section {
+    margin: 1% 2.5%;
+    position: relative;
+}
+
+section footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+aside {
+    width: 20%;
+    margin-bottom: 8px;
+}
+
+footer.main {
+    background-color: DimGray;
+    color: Snow;
+    width: 100%;
+    height: 100px;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+footer a:link, a:visited {
+    color: Snow;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#copy {
+    font-size: 0.75em;
+}

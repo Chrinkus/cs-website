@@ -1,12 +1,12 @@
-title: Another Date, Another Time
+title: Some Other Time
 author: Chris Schick
 date: May 21, 2017
-img: clock.png
+img: undercurrent.jpg
 alt: A clock
-teaser: If time really is linear, why is the Date() object so convoluted? How much sense does the <time> element inherit? Is it even important to correctly represent dates in HTML?
+textColor: Snow
+bgColor: OrangeRed
+teaser: If time really is linear, why is the Date() object so convoluted? How much sense does the "time" element inherit? Is it even important to correctly represent dates in HTML?
 ---
-
-# Another Date, Another Time
 
 Consider the following problem: you want to generate your own blog HTML and would like to sort your posts by date and display the five most recent on your main page. On top of that, imagine you're not loving the coffee at work as much as you used to. These are my immediate problems and to solve them I'll have to get more comfortable with the Date object and Time element. Also, I will have to rethink my whole coffee situation.
 
@@ -21,3 +21,9 @@ Actually, there was much confusion, command-tabbing, and stress-snacking. Howeve
 ## Know the State of your Date
 
 The main problem I had, and still have, is knowing what state my date information actually is in.
+
+## Another Date, Another Time
+
+...And that's enough. To cover this adequately I'll need to detect code snippets and maybe have some syntax highlighting. 
+
+To be continued...

@@ -10,13 +10,11 @@ function composeMain(config, template, topFive) {
 
           previews  = topFive.reduce((previewStr, postHead) => {
                           return previewStr += getArticlePreview(postHead);
-                      }, ""),
-
-          main      = createNode("main", previews);
+                      }, "");
 
     return template.replace("<!-- title -->", title)
                    .replace("<!-- hgroup -->", hgroup)
-                   .replace("<!-- main -->", main);
+                   .replace("<!-- previews -->", previews);
 
 }
 

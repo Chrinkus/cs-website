@@ -42,7 +42,8 @@ const composeMain   = require("./compose-main");
 
         // Write main blog page
         writeFile(`${config.paths.pages}/main.html`,
-                   composeMain(config, mainHTML, newestFive));
+                   composeMain(config, mainHTML, newestFive)
+                   .replace("<!-- aside -->", aside));
 
     }).catch(err => {
         console.error(err);
