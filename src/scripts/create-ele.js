@@ -15,7 +15,7 @@ function makeLink(href, content) {
 function makeImage(src, alt) {
     "use strict";
 
-    return `<img src="../style/img/${src}" alt="${alt}"/>`;
+    return `<img src="./style/img/${src}" alt="${alt}"/>`;
 }
 
 function makeTime(dateString) {
