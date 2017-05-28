@@ -92,30 +92,3 @@ aside {
     width: 20%;
     margin-bottom: 8px;
 }
-
-footer.main {
-    background-color: DimGray;
-    color: Snow;
-    width: 100%;
-    height: 100px;
-    padding: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 8px;
-}
-
-footer a:link, a:visited {
-    color: Snow;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-#copy {
-    font-size: 0.75em;
-}

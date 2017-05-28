@@ -1,0 +1,27 @@
+#global-footer {
+    background-color: DimGray;
+    color: Snow;
+    width: 100%;
+    min-height: 100px;
+    padding: 1%;
+    margin-bottom: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#global-footer a:link, a:visited {
+    color: Snow;
+    text-decoration: none;
+}
+
+#global-footer a:hover {
+    text-decoration: underline;
+}
+
+#global-footer footer {
+    border-top: 1px solid Snow;
+}

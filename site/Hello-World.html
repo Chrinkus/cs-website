@@ -2,48 +2,48 @@
 <html lang="en">
     <head>
         <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>JS Endeavours | Hello World</title>
         <link href="./style/css/post.css" rel="stylesheet">
         <link href="./style/css/aside.css" rel="stylesheet">
+        <link href="./style/css/footer.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     </head>
     <body>
-        <main>
+        <article>
             <aside>
-    <img src="./style/img/profile.jpg" alt="Picture of Chris Schick"/>
-    <p>Chris Schick</p>
-    <nav>
-        <h2>Projects:</h2>
-        <ul>
-            <a href="./main.html"><li>JS Endeavours</li></a>
-            <a href="https://chrinkus.github.io/squares/" target="_blank"><li>Squares</li></a>
-            <a href="https://chrinkus.github.io/walk/" target="_blank"><li>A Walk in the Woods</li></a>
-        </ul>
-    </nav>
-    <section id="social">
-        <a href="https://github.com/Chrinkus" target="_blank">
-            <img src="./style/img/gh_black.png" alt="GitHub profile"/>
-        </a>
-        <a href="https://twitter.com/chrinkus" target="_blank">
-            <img src="./style/img/tw_blue.png" alt="Twitter profile"/>
-        </a>
-        <a href="" target="_blank">
-            <img src="./style/img/fb_blue.png" alt="Facebook page"/>
-        </a>
+    <img id="portrait" src="./style/img/profile.jpg" alt="Picture of Chris Schick"/>
+    <section>
+        <h1>Chris Schick</h1>
+        <section id="social">
+            <a href="https://github.com/Chrinkus" target="_blank">
+                <img src="./style/img/gh_black.png" alt="GitHub profile"/>
+            </a>
+            <a href="https://twitter.com/chrinkus" target="_blank">
+                <img src="./style/img/tw_blue.png" alt="Twitter profile"/>
+            </a>
+            <a href="https://codepen.io/Chrinkus/" target="_blank">
+                <img src="./style/img/cp_black.png" alt="Codepen profile"/>
+            </a>
+            <a href="" target="_blank">
+                <img src="./style/img/fb_blue.png" alt="Facebook page"/>
+            </a>
+        </section>
     </section>
 </aside>
 
-            <article>
+            <section id="content">
                 <header>
                     <hgroup style="color:Snow;background:rgb(28, 65, 176);"><h1>Hello World</h1><p><time datetime=May 8, 2017>May 8, 2017</time></p></hgroup>
                     <img src="./style/img/earth.jpg" alt="A picture of the Earth from space"/>
                 </header>
                 <section><h1>Hello!</h1><p>This is some filler post content for parsing. i should probably mention that I've never done this before and am really excited to parse what I'm writing and have it actually work. I'm less excited to parse this a few dozen times before it does work but meh, nothing worth something was ever anything so.. yeah.</p><h2>Moving on..</h2><p>Second verse, mostly more drivel. The idea is to put these text sections into a paragraph node and the titles into headings. Obviously. However, I'm not sure if I can only use one h1 per page or if nested sections can start their own heading heierarchy. I guess I'll find out.</p><h2>Don't forget!</h2><p>I'll also need a replacer to substitute such html unfriendly characters as & and <>'s.</p><h3>Looking Back</h3><p>Finally got this parsed and html-ed. Now looking into getting the images to display nicely.</p></section>
-            </article>
-        </main>
-        <footer>
-            <p>Version 0.1.0 | <a href="https://github.com/Chrinkus/cs-website">GitHub Repository</a></p>
-            <p id="copy">&copy; Chris Schick 2017</p>
-        </footer>
+            </section>
+        </article>
+        <footer id="global-footer">
+        <p>Version 0.1.1 | <a href="https://github.com/Chrinkus/cs-website">GitHub Repository</a></p>
+</footer>
+
+
     </body>
 </html>

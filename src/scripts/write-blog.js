@@ -12,11 +12,12 @@ const composeMain   = require("./compose-main");
         readFile("../templates/temp-main.html"),
         readFile("../templates/temp-post.html"),
         readFile("../templates/aside.html"),
+        readFile("../templates/footer.html"),
         readFile("./config.json").then(file => JSON.parse(file)),
         getPosts("../posts")
 
     ]).then(files => {
-        const [mainHTML, postHTML, aside, config, posts] = files;
+        const [mainHTML, postHTML, aside, footer, config, posts] = files;
 
         // Will need this for Archives
         const sortedPosts = posts
@@ -37,13 +38,15 @@ const composeMain   = require("./compose-main");
             post.head.file = makeFileName(post.head.title);
             writeFile(`${config.paths.pages}/${post.head.file}.html`,
                       composePost(config, postHTML, post)
-                      .replace("<!-- aside -->", aside));
+                      .replace("<!-- aside -->", aside)
+                      .replace("<!-- footer -->", footer));
         });
 
         // Write main blog page
         writeFile(`${config.paths.pages}/main.html`,
                    composeMain(config, mainHTML, newestFive)
-                   .replace("<!-- aside -->", aside));
+                   .replace("<!-- aside -->", aside)
+                   .replace("<!-- footer -->", footer));
 
     }).catch(err => {
         console.error(err);

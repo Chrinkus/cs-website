@@ -6,14 +6,18 @@
     font-size: 16px;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    width: 940px;
+    max-width: 940px;
     margin: 0 auto;
     background-color: Snow;
     color: DimGray;
 }
 
-main {
+article {
     display: flex;
 }
 
@@ -22,25 +26,28 @@ aside {
     margin: 8px 0;
 }
 
-article {
+#content {
     width: 80%;
     margin: 8px 0 8px 8px;
     align-self: flex-end;
+
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     height: 250px;
     display: flex;
-    justify-content: flex-end;
 }
 
 header img {
+    display: block;
     height: 250px;
-    width: auto;
+    width: 250px;
 }
 
 header hgroup {
-    flex-grow: 1;
+    flex: 1 1 auto;
     margin-right: 8px;
     padding: 2%;
 
@@ -48,58 +55,70 @@ header hgroup {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 hgroup h1 {
     font-size: 2.5em;
 }
 
-article section {
-    margin-top: 8px;
+#content section {
+    margin: 8px 8px 0 0;
     padding: 1%;
 }
 
-article section h1 {
+#content section h1 {
     font-size: 1.75em;
 }
 
-article section h2 {
+#content section h2 {
     font-size: 1.5em;
     margin-bottom: 1%;
 }
 
-article section h3 {
+#content section h3 {
     font-size: 1.25em;
 }
 
-article section p {
+#content section p {
     text-align: justify;
     margin-bottom: 1.25em;
 }
 
-footer {
-    background-color: DimGray;
-    color: Snow;
-    width: 100%;
-    height: 100px;
-    padding: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 8px;
-}
+@media only screen and (max-width: 700px) {
 
-footer a:link, a:visited {
-    color: Snow;
-    text-decoration: none;
-}
+    * {
+        font-size: 18px;
+    }
 
-footer a:hover {
-    text-decoration: underline;
-}
+    article {
+        flex-direction: column;
+    }
 
-#copy {
-    font-size: 0.75em;
+    aside { 
+        width: 100%;
+        order: 2;
+    }
+
+    #content {
+        width: 100%;
+        order: 1;
+    }
+
+    header {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+        order: 1;
+        margin-bottom: 8px;
+    }
+
+    header hgroup {
+        order: 2;
+        width: 100%;
+        margin: 0;
+    }
 }
