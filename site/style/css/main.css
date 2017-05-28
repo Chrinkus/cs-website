@@ -7,7 +7,7 @@
 }
 
 body {
-    width:  940px;
+    max-width:  940px;
     margin: 0 auto;
     color: DimGray;
     background-color: Snow;
@@ -30,6 +30,7 @@ hgroup {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 hgroup h1 { font-size: 2.5em; }
@@ -79,16 +80,50 @@ article a:active {
 
 article section {
     margin: 1% 2.5%;
-    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+article section p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    flex: 1 0 auto;
 }
 
 section footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
+}
+
+section footer p {
+    margin: 0;
 }
 
 aside {
     width: 20%;
     margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        flex-direction: column;
+    }
+
+    #previews {
+        width: 100%;
+        order: 2;
+    }
+
+    aside {
+        width: 100%;
+        order: 1;
+    }
+
+    #previews article {
+        height: auto;
+    }
+
+    article img {
+        display: none;
+    }
 }
