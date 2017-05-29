@@ -61,6 +61,18 @@ header hgroup {
     text-align: center;
 }
 
+nav ul {
+    list-style-type: none;
+    margin: 8px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+a.pageNav:link, a.pageNav:visited {
+    color: DimGray;
+}
+
 hgroup h1 {
     font-size: 2.5em;
 }

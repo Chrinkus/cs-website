@@ -1,4 +1,4 @@
-#global-footer {
+#mainFooter {
     background-color: DimGray;
     color: Snow;
     width: 100%;
@@ -13,15 +13,14 @@
     text-align: center;
 }
 
-#global-footer a:link, a:visited {
+#mainFooter a:link, a:visited {
     color: Snow;
-    text-decoration: none;
 }
 
-#global-footer a:hover {
+#mainFooter a:hover {
     text-decoration: underline;
 }
 
-#global-footer footer {
+#mainFooter footer {
     border-top: 1px solid Snow;
 }
