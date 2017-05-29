@@ -15,9 +15,13 @@ body {
     margin: 0 auto;
     background-color: Snow;
     color: DimGray;
+
+    display: flex;
+    flex-direction: column;
 }
 
 article {
+    flex: 1 0 auto;
     display: flex;
 }
 
@@ -29,7 +33,6 @@ aside {
 #content {
     width: 80%;
     margin: 8px 0 8px 8px;
-    align-self: flex-end;
 
     display: flex;
     flex-direction: column;
