@@ -71,6 +71,15 @@ nav ul {
 
 a.pageNav:link, a.pageNav:visited {
     color: DimGray;
+    text-decoration: none;
+}
+
+a.pageNav:hover {
+    text-decoration: underline;
+}
+
+a.pageNav:active {
+    color: Indigo;
 }
 
 hgroup h1 {
