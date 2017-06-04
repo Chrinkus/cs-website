@@ -23,7 +23,7 @@ function sectionPost(content) {
         if (section.charAt(0) === "#")
             htmlStr += makeTitle(section);
         else
-            htmlStr += createNode("p", section);
+            htmlStr += createNode("p", parseInlineCode(section));
 
         return htmlStr;
     }, "");
@@ -46,4 +46,14 @@ function makeHgroup(head) {
                "</hgroup>";
 }
 
+function parseInlineCode(pString) {
+    "use strict";
+
+    return pString.replace(/ `([^`]+\S)`/g, (_, code) => {
+        return `<code class="inline">${code}</code>`;
+    });
+}
+
 module.exports = composePost;
+
+parseInlineCode("Something something `something` something");
