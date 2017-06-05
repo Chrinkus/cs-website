@@ -1,10 +1,10 @@
 title: Parsing Inline Code
 author: Chris Schick
 date: June 1, 2017
-img: 
-alt: 
-textColor: Crimson
-bgColor: CornflowerBlue
+img: syntax.jpg
+alt: A block of code with syntax highlighting
+textColor: DimGray
+bgColor: LightSkyBlue
 teaser: It's hard to write an effective blog about programming without the ability to share code examples.
 
 ---
@@ -26,3 +26,40 @@ Looking forward to that one `string` that breaks my `regex`.
 ## Step Two: Blocks
 
 Next up will be parsing out a whole block of code. This is also an opportunity to add some syntax highlighting down the road.
+
+Let's use the following as a test:
+```javascript
+const name = "Chris",
+      age = 38;
+
+for (let i = 0; i < age; i++) {
+    console.log("Happy Birthday");
+}
+```
+
+I can't wait to see how it looks!
+
+## Step Three: Success!!
+
+WOW! That ended up working out well. I went back and re-read the Regular Expression chapters in Crockford's Good Parts and Haverbeke's Eloquent JS to help out with the pattern hunting. In the end I feel a lot more confident with RegEx's and that's either a good thing or a very dangerous thing..
+
+Let's do another snippet just for fun! The following is the original form of a function that changed dramatically due to the addition of code block processing.
+
+```javascript
+function sectionPost(content) {
+    "use strict";
+ 
+    return content.reduce((htmlStr, section) => {
+        if (section.charAt(0) === "#")
+            htmlStr += makeTitle(section);
+        else
+            htmlStr += createNode("p", section);
+ 
+        return htmlStr;
+    }, "");
+}
+```
+
+## Moving On..
+
+Now that I have this tool working, I can get down to some serious posts. Up until now these have mostly been filler entries while I worked out how to set up my blog. Going forward the writing should be a little more polished and hopefully have some actual "content".

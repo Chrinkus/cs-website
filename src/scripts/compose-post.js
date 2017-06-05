@@ -1,4 +1,5 @@
 const { createNode, makeImage, makeTime } = require("./create-ele");
+const parseCode = require("./parse-code");
 
 function composePost(config, template, post) {
     "use strict";
@@ -18,12 +19,29 @@ function composePost(config, template, post) {
 
 function sectionPost(content) {
     "use strict";
+    let openCode = false,
+        language = "";
 
     return content.reduce((htmlStr, section) => {
-        if (section.charAt(0) === "#")
+        if (openCode) {
+            if (/^`{3}/.test(section)) {
+                htmlStr += "</code>";
+                openCode = false;
+            } else {
+                htmlStr += parseCode(section) + "<br/>";
+            }
+
+        } else if (/^`{3}/.test(section)) {
+            openCode = true;
+            language = section.slice(3);
+            htmlStr += `<code class=${language}>`; 
+
+        }else if (section.charAt(0) === "#") {
             htmlStr += makeTitle(section);
-        else
+
+        } else {
             htmlStr += createNode("p", parseInlineCode(section));
+        }
 
         return htmlStr;
     }, "");
@@ -46,6 +64,7 @@ function makeHgroup(head) {
                "</hgroup>";
 }
 
+// TODO replace or add this to general inline parser
 function parseInlineCode(pString) {
     "use strict";
 
@@ -55,5 +74,3 @@ function parseInlineCode(pString) {
 }
 
 module.exports = composePost;
-
-parseInlineCode("Something something `something` something");

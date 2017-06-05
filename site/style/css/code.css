@@ -5,3 +5,24 @@ code {
     border-radius: 0.15em;
     padding: 0 0.25em;
 }
+
+code span {
+    font-family: Monaco, monospace;
+}
+
+code.javascript {
+    display: block;
+    white-space: pre;
+    color: Snow;
+    background-color: DimGray;
+    padding: 1%;
+    margin-bottom: 1em;
+}
+
+code.javascript span.number      { color: orangered; }
+code.javascript span.string      { color: greenyellow; }
+code.javascript span.function    { color: lightskyblue; }
+code.javascript span.webAPI      { color: lightskyblue; }
+code.javascript span.declaration { color: yellow; }
+code.javascript span.fundamental { color: black; }
+code.javascript span.controlFlow { color: magenta; }
