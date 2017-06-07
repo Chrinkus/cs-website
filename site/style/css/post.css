@@ -110,11 +110,7 @@ hgroup h1 {
     margin-bottom: 1.25em;
 }
 
-@media only screen and (max-width: 600px) {
-
-    * {
-        font-size: 18px;
-    }
+@media only screen and (max-width: 800px) {
 
     article {
         flex-direction: column;
@@ -145,5 +141,11 @@ hgroup h1 {
         order: 2;
         width: 100%;
         margin: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    * {
+        font-size: 18px;
     }
 }
