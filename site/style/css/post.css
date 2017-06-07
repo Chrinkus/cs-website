@@ -27,12 +27,11 @@ article {
 
 aside {
     width: 20%;
-    margin: 8px 0;
+    margin: 0.5em 0;
 }
 
 #content {
     width: 80%;
-    margin: 8px 0 8px 8px;
 
     display: flex;
     flex-direction: column;
@@ -51,8 +50,8 @@ header img {
 
 header hgroup {
     flex: 1 1 auto;
-    margin-right: 8px;
-    padding: 2%;
+    margin-right: 0.5em;
+    padding: 1em;
 
     display: flex;
     flex-direction: column;
@@ -63,7 +62,7 @@ header hgroup {
 
 nav ul {
     list-style-type: none;
-    margin: 8px;
+    margin: 0.5em;
 
     display: flex;
     justify-content: space-between;
@@ -87,21 +86,23 @@ hgroup h1 {
 }
 
 #content section {
-    margin: 8px 8px 0 0;
-    padding: 1%;
+    margin: 0.5em;
+    padding: 0.5em;
 }
 
 #content section h1 {
     font-size: 1.75em;
+    margin-bottom: 0.5em;
 }
 
 #content section h2 {
     font-size: 1.5em;
-    margin-bottom: 1%;
+    margin-bottom: 0.5em;
 }
 
 #content section h3 {
     font-size: 1.25em;
+    margin-bottom: 0.5em;
 }
 
 #content section p {
@@ -109,7 +110,7 @@ hgroup h1 {
     margin-bottom: 1.25em;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
 
     * {
         font-size: 18px;
@@ -137,7 +138,7 @@ hgroup h1 {
 
     header img {
         order: 1;
-        margin-bottom: 8px;
+        margin-bottom: 0.5em;
     }
 
     header hgroup {
