@@ -19,7 +19,7 @@ This is a series on how to build your own single-page blog generator. The steps 
 
 As with everything I do, the above represents the intended layout, variations to this path may occur.
 
-## The  pitch
+## The Pitch
 
 You're curious about blogs. You've likely sourced someone else's blog to help you answer a question or fill out your understanding of a new language feature. You learned from them, maybe others can learn from you.
 
@@ -27,7 +27,7 @@ Or perhaps you're already writing your own blog. You've used one of the many blo
 
 Whether you're an experienced blogger or not, the value of keeping a blog to document your learning is great. Anyone who is learning to program eventually encounters frustration when faced with a less-than-intuitive language API. For me that was the `Date()` object. And event listeners. And drum synthesis with `WebAudio`, `Promises`, Node.js, etc.
 
-## The point
+## The Point
 
 The point is, if YOU had trouble and felt like a fool, OTHER people have run into the same walls. You can read someone else's story, use it to shape your own, then write about it so hopefully the next person to get stuck has that much more material to help them through.
 
@@ -35,7 +35,7 @@ So we've covered a few reasons why to write a blog. Now if you like you can go o
 
 # Write your own blog generating software
 
-As projects go you won't find another that incorporates JavaScript, HTML and CSS together to produce satisfying output. The only library you'll need is Node.js to handle your file management. I've learned a great deal from online courses that teach skills in JS, HTML and CSS separately, but always felt a missing step was the blending of those skills into a single, glorious product.
+As projects go you won't find many that incorporate JavaScript, HTML and CSS together to produce such satisfying output. The only library you'll need is Node.js to handle your file management. I've learned a great deal from online courses that teach skills in JS, HTML and CSS separately, but always felt a missing step was the blending of those skills into a single, glorious product. Though it is likely that such projects are available behind a paywall.
 
 If you already have a beefy blog that you don't want to give up that's ok, you can still at least go through the motions of generating your own and THEN write about your experience on your fancy WixPresser page.
 
@@ -43,8 +43,8 @@ If you already have a beefy blog that you don't want to give up that's ok, you c
 
 1. An intermediate understanding of JavaScript (ES5). Any newer features that I use will be briefly discussed.
 2. A basic understanding of HTML and CSS. We will be using HTML5 semantic tags but they are relatively easy to pick up if you haven't used them before.
-3. Node.js installed on your system. Though we won't necessarily require the latest version its still a good idea to keep your Node.js up to date. If you're unfamiliar with Node.js I will discuss it at the end of this post.
-4. Either a basic understanding of the command line or a willingness to learn one. For a quality introduction to the command line, check out Codecademy.
+3. [Node.js](https://nodejs.org/) installed on your system. Though we won't necessarily require the latest version its still a good idea to keep your Node.js up to date. If you're unfamiliar with Node.js I will discuss it at the end of this post.
+4. Either a basic understanding of the command line or a willingness to learn one. For a quality introduction to the command line, check out [Codecademy](https://www.codecademy.com/learn/learn-the-command-line).
 
 ## Lets get started
 
@@ -56,7 +56,7 @@ $ cd diy-blog
 $ touch mock-index.html
 ```
 
-The first thing we'll do is create a basic mock-up for our blog main page. We'll stick to a single static page for now and grow the blog when the time is right. Below is a simple HTML page that will serve as our first target for blog generation.
+The first thing we'll do is create a basic mock-up for our blog main page. We'll stick to a single static page for now and grow the blog when the time is right. Below is a simple HTML page that will serve as our first target for blog generation. Feel free to change the `title` and `h1` tags to anything that better represents your interests here.
 
 ```html
 <!DOCTYPE html>
@@ -95,13 +95,13 @@ Either type the above in your terminal or just open your favorite browser, click
 
 ## For next time
 
-Next time we will create separate files for each post and use javascript to inject the articles into an HTML template. But we only have one post, so for next time use the provided article format to write 2 more posts and paste them below the provided article. Make them yours, write briefly about things that interest you. If you "Lorem ipsum" them I will know and the kittens will cry.
+In the next few articles we will create separate files for each post and use javascript to inject the articles into an HTML template. But we only have one post, so for next time use the provided article format to write 2 more posts and paste them below the provided article. Make them yours, write briefly about things that interest you. If you "Lorem ipsum" them I will know and the internet kittens will cry.
 
 ### A word about Node.js
 
 JavaScript, HTML and CSS are common tools that can be used to create pages and applications without the need to download external resources or libraries. One of the things that is missing from this toolkit is the ability to navigate your local file structure. Node.js allows us to do that.
 
-To get Node.js on your system, go to nodejs.org and locate the Download section (it should be on the main page, big green button). Choose your download, either will work for our purposes, and follow the installation instructions provided. When complete you can type the following in your command line to ensure it has been installed properly:
+To get Node.js on your system, go to [nodejs.org](https://nodejs.org/) and locate the Download section (it should be on the main page, big green button). Choose your download, either will work for our purposes, and follow the installation instructions provided. When complete you can type the following in your command line to ensure it has been installed properly:
 ```command
 $ node -v
 ```

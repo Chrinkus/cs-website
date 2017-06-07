@@ -1,4 +1,4 @@
-const { createNode, makeImage, makeTime } = require("./create-ele");
+const { createNode, makeImage, makeTime, makeLink } = require("./create-ele");
 const parseCode = require("./parse-code");
 
 function composePost(config, template, post) {
@@ -40,7 +40,7 @@ function sectionPost(content) {
             htmlStr += makeTitle(section);
 
         } else {
-            htmlStr += createNode("p", parseInlineCode(section));
+            htmlStr += createNode("p", parseInlineText(section));
         }
 
         return htmlStr;
@@ -64,13 +64,17 @@ function makeHgroup(head) {
                "</hgroup>";
 }
 
-// TODO replace or add this to general inline parser
-function parseInlineCode(pString) {
+// TODO include better regexp for link detection(?)
+function parseInlineText(section) {
     "use strict";
 
-    return pString.replace(/ `([^`]+\S)`/g, (_, code) => {
-        return `<code class="inline">${code}</code>`;
-    });
+    return section
+        // Inline links
+        .replace(/\[([\w.]+)\]\(([^\)]+)\)/, makeLink("$2", "$1"))
+        // Inline code
+        .replace(/`([^`]+\S)`/g, (_, code) => {
+            return `<code class="inline">${code}</code>`;
+        });
 }
 
 module.exports = composePost;

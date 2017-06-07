@@ -12,10 +12,10 @@
     text-align: center;
 }
 
-#mainFooter a:link, a:visited {
+a.light:link, a.light:visited {
     color: Snow;
 }
 
-#mainFooter a:hover {
+a.light:hover {
     text-decoration: underline;
 }
