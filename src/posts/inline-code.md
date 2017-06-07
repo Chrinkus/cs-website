@@ -19,7 +19,7 @@ Success!
 
 ## The Meat
 
-To represent code I added a function into the paragraph parser that looked for the markdown characters `` and replaced them with the containing characters in mono with some color effects to highlight their importance. Once again I dipped into the underworld of regular expressions to replace text and it has worked well so far.
+To represent code I added a function into the paragraph parser that looked for the markdown characters \`\` and replaced them with the containing characters in mono with some color effects to highlight their importance. Once again I dipped into the underworld of regular expressions to replace text and it has worked well so far.
 
 Looking forward to that one `string` that breaks my `regex`.
 
@@ -43,21 +43,40 @@ I can't wait to see how it looks!
 
 WOW! That ended up working out well. I went back and re-read the Regular Expression chapters in Crockford's Good Parts and Haverbeke's Eloquent JS to help out with the pattern hunting. In the end I feel a lot more confident with RegEx's and that's either a good thing or a very dangerous thing..
 
-Let's do another snippet just for fun! The following is the original form of a function that changed dramatically due to the addition of code block processing.
+Let's do another snippet just for fun! Something game related because its been too long..
 
 ```javascript
-function sectionPost(content) {
-    "use strict";
+const addAttack = (state) => ({
+    attack: (target) => {
+        target.hurt(state.atkPwr);
+    }
+});
  
-    return content.reduce((htmlStr, section) => {
-        if (section.charAt(0) === "#")
-            htmlStr += makeTitle(section);
-        else
-            htmlStr += createNode("p", section);
+const addHurt = (state) => ({
+    hurt: (damage) => {
+        state.hp -= Math.ceil(state.armor / 100 * damage);
+    }
+});
  
-        return htmlStr;
-    }, "");
-}
+const player = (name) => {
+    const state = {
+        name,
+        hp:     100,
+        atkPwr: 12,
+        armor:  4
+    };
+    
+    return Object.assign(
+        {},
+        addAttack(state),
+        addHurt(state)
+    );
+};
+ 
+const chris = player("Chris");
+const dave  = player("Dave");
+ 
+chris.attack(dave);
 ```
 
 ## Moving On..

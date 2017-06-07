@@ -1,4 +1,27 @@
-function parseCode(line) {
+function parseCode(line, language) {
+    "use strict";
+
+    switch (language) {
+        case 'command':         // fall through for now
+        case 'javascript':
+            return parseJS(line);
+        case 'html':
+            return parseHTML(line);
+        default:
+            //throw Error("unrecognized language", line);
+    }
+}
+
+function parseHTML(line) {
+    "use strict";
+
+    return line
+        .replace(/&/g, "&amp;")
+        .replace(/<\/?/g, "<span class=\"html\">&lt;")
+        .replace(/>/g, "&gt;</span>");
+}
+
+function parseJS(line) {
     "use strict";
     
     if (/["'`]/.test(line)) {
@@ -26,8 +49,8 @@ function parseString(line) {
             console.error("parseString() couldn't find string");
     }
 
-    return parseCode(pre) + `<span class="string">${str}</span>` +
-        parseCode(post);
+    return parseJS(pre) + `<span class="string">${str}</span>` +
+        parseJS(post);
 }
 
 function numFinder(line) {
@@ -121,7 +144,9 @@ function replaceKeyWords(word) {
 
 module.exports = parseCode;
 
-console.log(parseCode("var x = 10;"));
-console.log(parseCode("let name1 = \"Chris\";"));
-console.log(parseCode("for (var i = 0; i < \"name\".length; ++i) {"));
-console.log(parseCode("console.log(\"Happy Birthday!\");"));
+/*
+console.log(parseJS("var x = 10;"));
+console.log(parseJS("let name1 = \"Chris\";"));
+console.log(parseJS("for (var i = 0; i < \"name\".length; ++i) {"));
+console.log(parseJS("console.log(\"Happy Birthday!\");"));
+*/

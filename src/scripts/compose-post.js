@@ -28,7 +28,7 @@ function sectionPost(content) {
                 htmlStr += "</code>";
                 openCode = false;
             } else {
-                htmlStr += parseCode(section) + "<br/>";
+                htmlStr += parseCode(section, language) + "<br/>";
             }
 
         } else if (/^`{3}/.test(section)) {

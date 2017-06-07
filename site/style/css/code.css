@@ -1,28 +1,34 @@
-code {
-    font-family: Monaco, monospace;
-    color: Red;
-    background-color: Silver;
+code.inline {
+    display: inline;
+    color: Snow;
+    background-color: DimGray;
     border-radius: 0.15em;
     padding: 0 0.25em;
+    margin-left: 0.25em;
 }
 
 code span {
     font-family: Monaco, monospace;
 }
 
-code.javascript {
+code {
     display: block;
     white-space: pre;
+    overflow-x: scroll;
+    border-radius: 0.25em;
+    font-family: Monaco, monospace;
     color: Snow;
-    background-color: DimGray;
-    padding: 1%;
+    background-color: #333333;
+    padding: 2%;
     margin-bottom: 1em;
 }
 
-code.javascript span.number      { color: orangered; }
+code.javascript span.number      { color: orange; }
 code.javascript span.string      { color: greenyellow; }
 code.javascript span.function    { color: lightskyblue; }
 code.javascript span.webAPI      { color: lightskyblue; }
-code.javascript span.declaration { color: yellow; }
-code.javascript span.fundamental { color: black; }
-code.javascript span.controlFlow { color: magenta; }
+code.javascript span.declaration { color: fuchsia; }
+code.javascript span.fundamental { color: yellow; }
+code.javascript span.controlFlow { color: fuchsia; }
+
+code.html span.html { color: orange; }
