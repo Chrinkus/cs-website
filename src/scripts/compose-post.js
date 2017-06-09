@@ -30,6 +30,39 @@ function sectionPost(content) {
             } else {
                 htmlStr += parseCode(section, language) + "<br/>";
             }
+            return htmlStr;
+        }
+
+        if (/^[^a-zA-Z"']/.test(section)) {
+            switch (section.charAt(0)) {
+                case '#':
+                    // Title
+                    htmlStr += makeTitle(section);
+                    break;
+                case '!':
+                    // Image
+                    htmlStr += section.replace(/^\!\[([\w\s]+)\]\(([^\)]+)\)$/,
+                            makeImage("$2", "$1"));
+                    break;
+                case '`':
+                    // Code
+                    if (/^`{3}/.test(section)) {
+                        openCode = true;
+                        language = section.slice(3);
+                        htmlStr += `<code class=${language}>`; 
+                    }
+                    break;
+                case '1':
+                    // Ordered List
+                    if (/^\d\.\s/.test(section)) {
+                        openList = true;
+                        htmlStr += "<ol>" + makeListItem(section);
+                    }
+                    break;
+                default:
+                    throw Error("Un-recognized flag: " + section.charAt(0));
+            }
+        }
 
         } else if (/^`{3}/.test(section)) {
             openCode = true;
@@ -69,6 +102,8 @@ function parseInlineText(section) {
     "use strict";
 
     return section
+        // Inline images
+        .replace(/\!\[([\w\s]+)\]\(([^\)]+)\)/, makeImage("$2", "$1"))
         // Inline links
         .replace(/\[([\w.]+)\]\(([^\)]+)\)/, makeLink("$2", "$1"))
         // Inline code

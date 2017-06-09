@@ -91,6 +91,8 @@ $ open mock-index.html
 
 Either type the above in your terminal or just open your favorite browser, click the "File" drop down menu and select "Open file..". In the provided window, navigate to your "diy-blog" and click "Open".
 
+![HTML only blog](./tech_blog_html.png)
+
 ..And that's your target. It's kind of plain, uses an ugly font and stretches right across the page. If this is your first HTML page don't be disappointed, this is what all websites look like underneath their CSS. Very soon we will look at ways to make it beautiful.
 
 ## For next time

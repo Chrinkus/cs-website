@@ -130,6 +130,11 @@ hgroup h1 {
         order: 1;
     }
 
+    #content  section img {
+        width: 100%;
+        height: auto;
+    }
+
     header {
         height: auto;
         flex-direction: column;
