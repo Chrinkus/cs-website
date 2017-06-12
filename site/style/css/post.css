@@ -110,6 +110,11 @@ hgroup h1 {
     margin-bottom: 1.25em;
 }
 
+p img {
+    width: 100%;
+    border: 1px solid DimGray;
+}
+
 #content a:link, a:visited {
     color: Indigo;
 }
