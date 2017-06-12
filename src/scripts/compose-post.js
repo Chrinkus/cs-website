@@ -19,7 +19,8 @@ function composePost(config, template, post) {
 
 function sectionPost(content) {
     "use strict";
-    let openCode = false,
+    let openList = false,
+        openCode = false,
         language = "";
 
     return content.reduce((htmlStr, section) => {
@@ -31,6 +32,16 @@ function sectionPost(content) {
                 htmlStr += parseCode(section, language) + "<br/>";
             }
             return htmlStr;
+        }
+
+        if (openList) {
+            if (/^\D/.test(section)) {
+                htmlStr += "</ol>";
+                openList = false;
+            } else {
+                html += makeListItem(section);
+            }
+            // List closes passively and thus must not return early
         }
 
         if (/^[^a-zA-Z"']/.test(section)) {
@@ -54,7 +65,7 @@ function sectionPost(content) {
                     break;
                 case '1':
                     // Ordered List
-                    if (/^\d\.\s/.test(section)) {
+                    if (/^\d+\.\s/.test(section)) {
                         openList = true;
                         htmlStr += "<ol>" + makeListItem(section);
                     }
@@ -62,22 +73,19 @@ function sectionPost(content) {
                 default:
                     throw Error("Un-recognized flag: " + section.charAt(0));
             }
-        }
-
-        } else if (/^`{3}/.test(section)) {
-            openCode = true;
-            language = section.slice(3);
-            htmlStr += `<code class=${language}>`; 
-
-        }else if (section.charAt(0) === "#") {
-            htmlStr += makeTitle(section);
 
         } else {
             htmlStr += createNode("p", parseInlineText(section));
         }
-
         return htmlStr;
     }, "");
+}
+
+function makeListItem(line) {
+    "use strict";
+    const [, content] = line.match(/^\d+\.\s(.+)$/);
+
+    return `<li>${content}</li>`;
 }
 
 function makeTitle(titleSection) {
