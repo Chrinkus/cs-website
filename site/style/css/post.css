@@ -110,9 +110,19 @@ hgroup h1 {
     margin-bottom: 1.25em;
 }
 
-p img {
+#content section img {
     width: 100%;
     border: 1px solid DimGray;
+}
+
+#content section ol, ul {
+    list-style-position: outside;
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+#content section li {
+    margin-bottom: 0.5em;
 }
 
 #content a:link, a:visited {
